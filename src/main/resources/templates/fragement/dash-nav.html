@@ -1,0 +1,42 @@
+<!-- Mobile menu -->
+
+<ul class="sidenav" id="mobile-demo">
+		<a th:if="${user.imgUrl == null}" href="">
+			<li style="display: flex; padding: 15px; border-bottom: 1px solid #303a52;">
+			<img src="/assets/avatar.svg" alt="Avatar" class="avatar"> 
+			<h6 style="color: #fce38a;">Ezziani Mohamed</h6>
+		</li>
+	
+	</a>
+		<a th:if="${user.imgUrl != null}" href="">
+			<li style="display: flex; padding: 15px; border-bottom: 1px solid #303a52;">
+			<img th:src="@{${user.imgUrl}}" alt="Avatar" class="avatar" > 
+			<h6 style="color: #fce38a;">Ezziani Mohamed</h6>
+		</li>
+	
+	</a>
+    <li><a href="/formateur/dashboard">DashBoard</a></li>
+    <li><a href="/formateur/listformation">List Formations</a></li>
+    <li><a href="/formateur/editprofile">Edit Profile</a></li>
+</ul>
+
+<nav class="upper-nav">
+	<ul class="upper-nav-ul">
+		<a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+		<li class="logo hide-on-med-and-down">LOGO</li>
+		<li style="margin-left: 10px; margin-right: 20px;" class="hide-on-med-and-down">
+        	<a href="#" th:if="${user.imgUrl == null}" style="display: flex; padding: 10px;" class='dropdown-trigger' data-target='dropdown2'>
+        		<img src="/assets/avatar.svg" alt="Avatar" class="avatar" />
+        	</a>
+        	<a href="#" th:if="${user.imgUrl != null}" style="display: flex; padding: 10px;" class='dropdown-trigger' data-target='dropdown2'>
+        		<img th:src="@{${user.imgUrl}}" alt="Avatar" class="avatar" />
+        	</a>
+        </li>
+	</ul>
+</nav>
+
+<!-- profile dropdown -->
+  <ul id='dropdown2' class='dropdown-content dropdown2'>
+     <li><a href="/formateurprofile">My Profile</a></li>
+     <li><a href="/logout">Logout</a></li>
+   </ul>

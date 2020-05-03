@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>Dashboard</title>
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>  
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>     
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+</head>
+<body>
+
+	<header th:insert="fragement/dash-nav"></header>
+
+	<div class="page">
+
+		<div th:insert="fragement/side-nav"></div>
+
+		<div class="content">
+
+
+						
+		</div>
+		
+	</div>
+
+
+	<script type="text/javascript">
+	
+	  $(document).ready(function(){
+	  	$(".nav a").hover(function(){
+			  $(".nav").css("width", "300px");
+			  $(".nav").css("transition", "0.3s ease");
+
+			  }, function(){
+			  $(".nav").css("width", "80px");
+			  $(".nav").css("transition", "0.3s ease");
+
+			});
+	    $('.carousel.carousel-slider').carousel({
+	      fullWidth: true,
+	      indicators: true
+	    });
+
+	    $('.dropdown-trigger').dropdown();
+
+	    $('.sidenav').sidenav();
+	  });
+          
+      
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+	<img class="wave" src="/assets/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="/assets/background.svg">
+		</div>
+		<div class="login-content">
+			<form th:action="@{/singupProcess}" method="post"> 
+	
+		        
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input name="email" type="email" class="input" th:value="${email}" disabled="disabled">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h50>Saisir une Password </h5>
+           		    	<input name="password" type="password" class="input">
+            	   </div>
+            	</div>
+            		<div>
+					<input type="radio" id="contactChoice1"
+				     name="roles" value="FORMATEUR">
+				    <label for="contactChoice1">Teacher</label>
+				
+				    <input type="radio" id="contactChoice2"
+				     name="roles" value="USER" checked="checked">
+				    <label for="contactChoice2">Student</label>
+				    </div>
+            	<input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/login.js"></script>
+</body>
+</html>

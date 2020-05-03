@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Formation</title>
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>  
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>     
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="/css/add_formation.css">
+</head>
+<body>
+
+	<div class="upper-design">
+		
+		
+	</div>
+
+	<div class="form-holder">
+		<form th:action="@{/formateur/addformation}" method="post"  enctype="multipart/form-data" class="form">
+			<div id="modal1" class="alert alert-info modal" th:if="${success}">
+				<p class="text text-center">
+				  Formation was Saved !!
+				</p>
+			</div>
+			<div class="form-header">
+				<h4>Add Formation</h4>
+				<a href="/formateur/listformation">
+					<svg class="svg-icon" viewBox="0 0 20 20">
+					<path fill="none" d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08
+									c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469
+									c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304
+									c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z"></path>
+					</svg>
+				</a>
+			</div>
+			  <div class="row form-body">
+			    <div class="col s12">
+			      <div class="row">
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="title" placeholder="ex: Design" type="text" class="validate">
+			          <label for="title">Title</label>
+			          
+			        </div>
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="subtitle" type="text" class="validate">
+			          <label for="title">Sub Title</label>
+			         
+			        </div>
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="price" id="price" type="text" class="validate">
+			          <label for="price">Overall Price</label>
+			        
+			        </div>
+			      </div>
+
+			      <div class="row">
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="language"  id="language" type="text" class="validate">
+			          <label for="language">language</label>
+			          
+			        </div>
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="date_depart" id="date_depart" type="Date" class="validate">
+			          <label for="date_depart">Date Depart</label>
+			        
+			        </div>
+			      <div class="input-field col xl4 l4 m6 s10">
+			          <input name="limit_student"  id="limit_student" type="text" class="validate">
+			          <label for="limit_student">Limit of Students</label>
+			          
+			        </div>
+			      </div>
+				<div class="row">
+
+			        <div class="input-field col xl4 l4 m6 s10">
+			          	<select name="categorie">
+					      <option name="categorie" value="" disabled selected >Choose your option</option>
+					      <option name="categorie" value="design">Design</option>
+					      <option name="categorie" value="developpement">Developpement</option>
+					      <option name="categorie" value="security">Security</option>
+					      <option name="categorie" value="business">Business</option>
+					      <option name="categorie" value="finance">Finance</option>
+					      <option name="categorie" value="marketing">Marketing</option>
+					      <option name="categorie" value="itandsoftware">IT & Software</option>
+					      <option name="categorie" value="music">Music</option>
+					      <option name="categorie" value="photography">photography</option>
+					      <option name="categorie" value="cooking">Cooking</option>
+					    </select>
+					    <label>Materialize Select</label>
+			
+			        </div>
+			        
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="duration" id="time" type="text" class="validate">
+			          <label for="time">Duration</label>
+			         
+			        </div>
+			       	<div class="input-field col xl4 l4 m6 s10">
+			          <input name="place" id="place" type="text" class="validate">
+			          <label for="place">Place</label>
+			        
+			        </div>
+			      </div>
+			      <div class="row">
+
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="description" id="place" type="text" class="validate">
+			          <label for="description">Description</label>
+			          
+			        </div>
+			        
+			        <div class="file-field input-field col s12 xl4 l4 6m">
+                            <div class="btn">
+                              <span>Image</span>
+                              <input name="img" type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text" placeholder="Upload your image">
+                            </div>
+                    </div>
+			      </div>
+			       
+			      
+			      <div class="add_formation_holder">
+				      <div class="add_button">
+						<button type="submit" data-target="modal1" class="modal-trigger">
+							<h5>INSERT</h5>
+						</button>
+				      </div>
+			      </div>
+
+
+			    </div>
+			  </div>
+			
+		</form>
+	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('select').formSelect();
+		    $('.modal').modal();
+		    $('.modal').modal('open');
+		  }); 
+	</script>
+
+
+</body>
+</html>

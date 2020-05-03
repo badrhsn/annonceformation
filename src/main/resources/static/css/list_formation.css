@@ -1,0 +1,153 @@
+body {
+	height: 100vh !important;
+	background-color: #fff;
+	background-attachment: fixed;
+}		
+
+tr {
+	border-bottom: 2px solid #236969;
+	color: #000;
+}
+
+td {
+	vertical-align: middle;
+}
+
+th {
+	color: #fafafa;
+}
+
+thead {
+	background-color: #236969;
+}
+
+.table-plan td {
+	padding: 0;
+}
+
+.table-plan a:hover > .material-icons{
+	background-color: #ececeb;
+	transition: 0.3s ease;
+}
+
+.table-plan button {
+	background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.table-plan button:hover {
+	background-color: #ececeb;
+	transition: 0.3s ease;
+}
+
+/* Content svgs */
+.content .svg-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.content .svg-icon path,
+.content .svg-icon polygon,
+.content .svg-icon rect {
+  fill: #236969;
+}
+
+.content .svg-icon circle {
+  stroke: #236969;
+  stroke-width: 1;
+}
+
+.content h5 {
+	color: white;
+	margin: 0 0 0 10px;
+}
+
+.add_formation a:hover > .add_formation_button{
+	background-color: #236969;
+	transition: 0.4s ease;
+}
+
+.add_formation a:hover > .add_formation_button h5 {
+	color: #fff;
+}
+
+.add_formation a:hover > .add_formation_button .svg-icon path, .add_formation_button.svg-icon polygon,
+.add_formation_button .svg-icon rect, .add_formation_button .svg-icon circle  {
+	fill: #fff !important;
+}
+
+
+.add_formation {
+	display: flex;
+	justify-content: flex-end;
+	width: 90%;
+	margin: 50px auto;
+}
+
+.add_formation_button {
+	padding: 15px 30px;
+	width: max-content;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	transition: 0.4s ease;
+	border-bottom: 4px solid #236969;
+}
+
+.add_formation_button h5 {
+	color: #236969;
+}
+
+.table {
+	width: 90%;
+	margin: 70px auto;
+}
+
+.actions {
+	padding: 0;
+}
+
+.actions-list {
+	display: flex;
+	justify-content: center;
+}
+
+.actions-list a:hover > .material-icons{
+	background-color: #ececeb;
+	transition: 0.3s ease;
+}
+
+.actions-list button {
+	background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding:0;
+    transition: .3s ease-in-out;
+}
+
+.actions-list button:hover {
+	background-color: #ececeb;
+}
+
+.content .material-icons{
+	padding: 10px !important;
+	transition: 0.3s ease;
+
+}
+
+@media screen and (max-width: 1000px){
+	tr{
+		border-right: 1px solid #fff;
+	}
+
+	.add_formation {
+		justify-content: center;
+	}
+
+	.add_formation_button {
+		background-color: #0e153a;
+	}
+}
+

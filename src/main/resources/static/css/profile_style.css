@@ -1,0 +1,166 @@
+* {
+	box-sizing: border-box !important;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	height: 100%;
+	background-color: #fbf9fa;
+}
+
+.card-action {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 150px;
+}
+
+.content {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.search_input {
+	border : 1px solid #dcdacb !important;
+	height: 3rem !important;
+}
+
+.head-search {
+	border: 1px solid #dcdacb;
+	
+}
+
+.profile_cover {
+	height: 200px;
+	overflow: hidden;
+}
+
+.cover_image {
+	width: 100%;
+}
+
+.img .avatar {
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile_info {
+	width: 100%;
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-bottom: 1px solid #dee1ec;
+}
+
+.img {
+	position: absolute;
+	top: -49%;
+}
+
+.name-place {
+	margin-top: 50px;
+}
+
+.dropdown-competence {
+}
+
+.row {
+	display: flex;
+	justify-content: flex-start !important;
+	flex-wrap: wrap;
+}
+
+.col {
+	margin-left: 0 !important;
+}
+
+
+
+.card-action p {
+	margin: 0;
+	color: black;
+}
+
+.title h4 {
+	font-weight: 700;
+	padding: 30px 10px;
+}
+
+.social-media {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+
+}
+
+.social-media li {
+	display: flex;
+	align-items: center;
+	padding: 10px 16px;
+}
+
+.social-media li:last-child {
+}
+
+a {
+	transition: .5s ease;
+}
+
+.inscription-buttons {
+	display: flex;
+}
+
+
+.reinscrire {
+	text-align: center;
+	margin-right: 0 !important;
+	border:none;
+	cursor: pointer;
+}
+
+.re1 {
+	padding: 4px 0 4px 16px;
+	display: flex;
+	flex: 2;
+	background-color: #2d4059;
+}
+
+.re1 h6 {
+	margin: 0.7rem;
+	color: #ffab40;
+	text-transform: uppercase;
+}
+
+.re2 {
+	margin-left: 2px;
+	background-color: #7c203a;
+	padding: 4px 0;
+}
+
+.re2 h6 {
+	margin: 0.7rem;
+	color: #ffab40;
+	text-transform: uppercase;
+}
+
+@media only screen and (max-width: 601px) {
+	
+	.row {
+		justify-content: center !important;
+	}
+
+.title h4 {
+	font-weight: 700;
+	padding: 30px 0;
+	text-align: center;
+}
+
+}

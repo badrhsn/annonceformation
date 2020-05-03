@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/consulter.css">
+    <title>Consulter la formation</title>
+</head>
+
+<body>
+
+    <div class="upper-design">
+
+
+    </div>
+
+    <div class="form-holder">
+        <form class="form">
+            <div class="form-header">
+
+                <h4>Consulter Formation</h4>
+
+                <a href="/formateur/listformation">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path fill="none" d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08
+									c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469
+									c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304
+									c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z"></path>
+                    </svg>
+                </a>
+
+            </div>
+
+
+            <div class="row form-body">
+                <div class="col s12">
+
+                    <div class="row">
+                        <div class="col xl4 l4 m5 s12 img-holder">
+                            <img src="/assets/test2.jpg" alt="image">
+                        </div>
+
+                        <div class="col xl8 l8 m7 s12 important-infos">
+                            <div class="title" style="margin-bottom: 10px;">
+                                <h3 th:text="${formation.title}"></h3>
+                            </div>
+
+                            <div class="subtitle">
+                                <h4 style="font-size: 25px;" th:text="${formation.subtitle}"></h4>
+                            </div>
+
+                            <div class="date-creation info">
+                                <i class="fas fa-calendar-week" style="margin-right: 10px;"></i>
+                                <h6>Created in: <span th:text="${formation.creation_date}"></span> </h6>
+                            </div>
+
+                            <div class="limit info">
+                                <i class="fas fa-users" style="margin-right: 10px;"></i>
+                                <h6>Limit of Students: <span th:text="${formation.limit_student}"></span></h6>
+                            </div>
+
+                            <div class="curr_subs info">
+                                <i class="fas fa-users" style="margin-right: 10px;"></i>
+                                <h6>Current subscribers: <span th:text="${formation.current_student}"></span></h6>
+                            </div>
+
+                            <div class="price info">
+                                <i class="fas fa-tags" style="margin-right: 10px;"></i>
+                                <h6>Price: <span th:text="${formation.price}"></span> MAD</h6>
+                            </div>
+
+                            <div class="duration info">
+                                <i class="fas fa-clock" style="margin-right: 10px;"></i>
+                                <h6>Duration: <span th:text="${formation.duration}"></span> Days</h6>
+                            </div>
+
+                            <div class="duration info">
+                                <i class="fas fa-globe" style="margin-right: 10px;"></i>
+                                <h6>Language: <span th:text="${formation.language}"></span></h6>
+                            </div>  
+
+                            <div class="duration info">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
+                                <h6>Location: <span th:text="${formation.place}"></span></h6>
+                            </div>  
+
+                            
+                        </div>
+                    </div>
+
+	                    <div class="add_formation_holder" th:if="${active}">
+	                        <div class="add_button">
+	                            <a th:href="@{/formateur/startFormation/(formation_id=${formation.id})}">
+	                                <h5>Commencer la Formation</h5>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="formation_started" th:if="${active == false}">
+	                        <div class="add_button">
+	                            
+	                                <h5>Formation Started</h5>
+	                            
+	                        </div>
+	                    </div>
+
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

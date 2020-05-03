@@ -1,0 +1,150 @@
+.container {
+	display: block;
+  }
+
+.formation-by-categories {
+	margin: auto;
+	width: 90%;
+	margin-top: 100px;
+}
+
+
+.title {
+	margin-left: 15px;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+  .card {
+	width: 250px;
+	margin: 0 0 0.2rem 0;
+  }
+  
+  .p-rating {
+  	  color: #e2434b !important;
+	  font-weight: 600 !important;
+	  color: #c24d2c !important;
+	  font-size: 13px !important;
+  }
+  
+  .p-price {
+  	font-weight: 700 !important;
+  	color: #0f7c6a !important;
+  }
+  
+  .card-action {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 120px;
+	padding: 10px 15px !important;
+	white-space: pre-line;
+  }
+  
+  h6 {
+	font-size: 1rem;
+  }
+  
+  /* slider css */
+  .pn-ProductNav_Wrapper {
+	position: relative;
+	padding: 0 11px;
+  }
+  
+  .pn-ProductNav {
+  	padding-left: 4px;
+	/* Make this scrollable when needed */
+	overflow-x: auto;
+	/* We don't want vertical scrolling */
+	overflow-y: hidden;
+	/* For WebKit implementations, provide inertia scrolling */
+	-webkit-overflow-scrolling: touch;
+	/* We don't want internal inline elements to wrap */
+	white-space: nowrap;
+	/* If JS present, let's hide the default scrollbar */
+	/* positioning context for advancers */
+	position: relative;
+  }
+  .js .pn-ProductNav {
+	/* Make an auto-hiding scroller for the 3 people using a IE */
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	/* Remove the default scrollbar for WebKit implementations */
+  }
+  .js .pn-ProductNav::-webkit-scrollbar {
+	display: none;
+  }
+  
+  .pn-ProductNav_Contents {
+	float: left;
+	transition: transform 0.2s ease-in-out;
+  }
+  
+  .pn-ProductNav_Contents-no-transition {
+	transition: none;
+  }
+  
+  .pn-ProductNav_Link {
+	text-decoration: none;
+	color: #888;
+	font-size: 1.2em;
+	font-family: -apple-system, sans-serif;
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+  }
+  .pn-ProductNav_Link + .pn-ProductNav_Link {
+	margin-left: 11px;
+	padding-left: 11px;
+	border-left: 1px solid #eee;
+  }
+  .pn-ProductNav_Link[aria-selected=true] {
+	color: #111;
+  }
+
+  .pn-Advancer_Icon {
+	  width: 45px !important;
+	  height: 45px !important;
+	  padding: 11px !important;
+	  border-radius: 50% !important;
+	  fill: #fff !important;
+	  background-color: #004d40 !important;
+  }
+
+  .pn-Advancer:focus {
+	background-color: transparent !important;
+  }
+
+
+  
+  .pn-Advancer {
+	/* Reset the button */
+	appearance: none;
+	background: transparent;
+	padding: 0;
+	border: 0;
+	/* Now style it as needed */
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	/* Set the buttons invisible by default */
+	opacity: 0;
+	transition: opacity 0.3s;
+  }
+
+  .pn-Advancer:hover {
+	cursor: pointer;
+  }
+  
+  .pn-Advancer_Left {
+	left: -10px;
+  }
+  [data-overflowing=both] ~ .pn-Advancer_Left, [data-overflowing=left] ~ .pn-Advancer_Left {
+	opacity: 1;
+  }
+  
+  .pn-Advancer_Right {
+	right: -10px;
+  }
+  [data-overflowing=both] ~ .pn-Advancer_Right, [data-overflowing=right] ~ .pn-Advancer_Right {
+	opacity: 1;
+  }

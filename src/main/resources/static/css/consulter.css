@@ -1,0 +1,160 @@
+body {
+	height: 100%;
+
+}
+
+.svg-icon {
+	padding: 5px;
+  	width: 40px;
+  	height: 40px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #236969;
+}
+
+.svg-icon circle {
+  stroke: #fce38a;
+  stroke-width: 1;
+}
+
+.upper-design {
+	position: fixed;
+	height: 200px;
+	width: 100vw;
+	background-color: #236969;;
+}
+
+.form-holder {
+	z-index: 99;
+	padding-top: 50px;
+	background-color: #fff;
+	height: 100%;
+}
+.form-holder h4 {
+    color: #236969;
+}
+
+.form {
+	padding: 25px;
+	position: relative;
+	z-index: 99;
+	width: 85%;
+	height: 100%;
+	background-color: #fbfbfb;
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form a:hover > .svg-icon {
+  background-color: #fce38a;
+}
+
+.form-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-header h4 {
+	margin:0;
+	border-bottom: 4px solid #236969;
+}
+
+.form-body {
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+
+.form-body img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.form-body .img-holder {
+	display: flex;
+}
+
+.row h4, h3 {
+	margin: 0;
+}
+
+.add_formation_holder, .formation_started {
+	display: flex;
+	justify-content: center;
+}
+
+.row {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.important-infos {
+	padding: 12px 0 12px 30px!important;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 11px;
+}
+
+.date-creation {
+	margin-top: 20px;
+}
+
+.info {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.info h6 {
+	margin: 0;
+}
+
+.add_button {
+	width: max-content;
+}
+
+.add_button a:hover > h5 {
+	background-color: #236969;
+	color: #fce38a;
+}
+
+.formation_started h5{
+	color: #fff !important;
+	padding: 15px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	transition: 0.4s ease;
+	background-color: #236969 !important;
+}
+
+.form-body h5 {
+	color: #236969;
+	padding: 15px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	transition: 0.4s ease;
+	border: 4px solid #236969;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+
+
+button:hover > h5{
+	background-color: #236969;
+	color: #fff;
+	transition: .3s ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+    .important-infos {
+		margin-top: 20px;
+	}
+}

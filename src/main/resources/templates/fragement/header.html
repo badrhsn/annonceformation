@@ -1,0 +1,80 @@
+<!-- Dropdown Structure -->
+   <ul  id='dropdown1' class='dropdown-content'>
+    <li th:each="categories :${categories}"><a th:href="@{/categorie(type=${categories.name})}"> [[${categories.name}]]</a></li> 
+  </ul>
+
+  <!-- Mobile menu -->
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/login">Login</a></li>
+    <li><a href="/signup" class="teal">signup</a></li>
+    <li><a href="#">Categories</a></li>
+  </ul>
+
+  <nav class="nav white">
+    <ul class="nav-elements nav-wrapper">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+
+      <div class="logo-cat">
+        <Li class="logo">
+          <a href="/index" class="black-text">Logo</a>
+
+        </Li>
+
+        <li class="categories hide-on-med-and-down">
+          <a href="#" class='dropdown-trigger black-text' data-target='dropdown1'>
+            <i class="material-icons" style="margin-right: 10px;">list</i>
+            Categories
+          </a>
+        </li>
+        
+        <li style="margin-top: 10px; margin-left: 10px;" class="hide-on-med-and-down">
+        	<form th:action="@{/search}" method="get">
+	         <div class="input-field" style="height: 45px;">
+	           <button type="submit" class="label-icon second-search">
+	               	<i class="material-icons">search</i>
+	           </button> 
+	           
+	           <input id="search" name="title" class="search_input" type="search" required
+	             placeholder="Que souhaitez vous apprendre ?" style="width: 100%;">
+	           
+	
+	         </div>
+	      </form>
+        </li>
+      </div>
+
+      <div class="login-signup hide-on-med-and-down">
+        <li th:if="${isLogged}">
+          <a href="/login" class="login black-text">Login</a>
+        </li>
+
+        <li th:if="${isLogged}">
+          <a href="/register" class="teal darken-4 signup">Sign Up</a>
+        </li>
+        
+        <li th:if="${isFormateur}">
+          <a href="/formateur/dashboard" class="teal darken-4 signup">DashBoard</a>
+        </li>
+        
+        <li th:if="${isUser}">
+          <a th:href="@{/home}" class="teal darken-4 signup">Home</a>
+        </li>
+        
+        <li th:if="${logout}" style="margin-left: 10px;">
+        	<a th:if="${user.imgUrl == null}"href="#" style="display: flex; padding: 7px;" class='dropdown-trigger' data-target='dropdown2'>
+        		<img src="/assets/avatar.svg" alt="Avatar" class="avatar" />
+        	</a>
+        	<a th:if="${user.imgUrl != null}"href="#" style="display: flex; padding: 7px;" class='dropdown-trigger' data-target='dropdown2'>
+        		<img th:src="@{${user.imgUrl}}" alt="Avatar" class="avatar" />
+        	</a>
+        </li>
+      </div>
+    </ul>
+  </nav>
+  
+  <!-- profile dropdown -->
+  <ul id='dropdown2' class='dropdown-content dropdown2'>
+     <li th:if="${isFormateur}"><a href="/formateurprofile">My Profile</a></li>
+     <li th:if="${isUser}"><a href="/userprofile">My Profile</a></li>
+     <li><a href="/logout">Logout</a></li>
+   </ul>

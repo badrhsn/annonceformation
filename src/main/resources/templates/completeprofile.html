@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/css/add_formation.css">
+
+    <title>Complete Profile</title>
+</head>
+
+<body>
+    <div class="upper-design">
+
+
+    </div>
+
+    <div class="form-holder">
+        <form class="form" th:action="@{/index}" th:object="${user}" method="post" enctype="multipart/form-data">
+            <div class="form-header">
+
+                <h4>Complete Informations</h4>
+
+                <a href="list_formation.html">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path fill="none" d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08
+									c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469
+									c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304
+									c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z"></path>
+                    </svg>
+                </a>
+
+            </div>
+
+
+            <div class="row form-body">
+                <div class="col s12">
+
+                    <div class="row">
+                        <div class="input-field col xl4 l4 m6 s10">
+                            <input id="first_name" name="country" type="text" class="validate">
+                            <label for="first_name">Country</label>
+                        </div>
+                        <div class="input-field col xl4 l4 m6 s10">
+                            <input name="city" id="last_name" type="text" class="validate">
+                            <label for="last_name">City</label>
+                        </div>
+                        <div class="input-field col xl4 l4 m6 s10">
+                            <input id="price" name="tele" type="text" class="validate">
+                            <label for="price">Phone Number</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 xl4 l4 6m">
+                            <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
+                            <label for="first_name">Tell us about yourself</label>
+                        </div>
+                        <div class="file-field input-field col s12 xl4 l4 6m">
+                            <div class="btn">
+                              <span>Image</span>
+                              <input name="imgUrl" type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text" placeholder="Upload your image">
+                            </div>
+                          </div>
+
+                          <div class="file-field input-field col s12 xl4 l4 6m">
+                            <div class="btn">
+                              <span>Cv</span>
+                              <input name="cv" type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text" placeholder="Upload your cv">
+                            </div>
+                          </div>
+                    </div>
+
+
+                    <div class="add_formation_holder">
+                        <div class="add_button">
+                            <button type="submit">
+                                <h5>Complete</h5>
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

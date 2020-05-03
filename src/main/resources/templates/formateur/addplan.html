@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Plan</title>
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>  
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>     
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="/css/add_formation.css">
+</head>
+<body>
+
+	<div class="upper-design">
+		
+		
+	</div>
+
+	<div class="form-holder">
+		<form th:action="@{/formateur/addplan}" method="post" th:object="${plan}" class="form">
+			<div class="alert alert-info" th:if="${success}">
+				<p class="text text-center">
+				  Plan was Saved !!
+				</p>
+				</div>
+			<div class="form-header">
+				<h4>Add Formation</h4>
+				<a href="/formateur/listformation">
+					<svg class="svg-icon" viewBox="0 0 20 20">
+					<path fill="none" d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08
+									c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469
+									c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304
+									c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z"></path>
+					</svg>
+				</a>
+			</div>
+			  <div class="row form-body">
+			    <div class="col s12">
+			      <div class="row">
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="p_title" placeholder="ex: Design" type="text" class="validate">
+			          <label for="title">Title</label>
+			          <div class="text text-danger" th:if="${#fields.hasErrors('p_title')}"
+					th:errors="*{p_title}"></div>
+			        </div>
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="description" id="price" type="text" class="validate">
+			          <label for="description">Description</label>
+			          <div class="text text-danger" th:if="${#fields.hasErrors('description')}"
+					th:errors="*{description}"></div>
+			        </div>
+			      </div>
+
+			      <div class="row">
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="duration" id="time" type="text" class="validate">
+			          <label for="time">Duration</label>
+			          <div class="text text-danger" th:if="${#fields.hasErrors('duration')}"
+					th:errors="*{duration}"></div>
+			        </div>
+			        <div class="input-field col xl4 l4 m6 s10">
+			          <input name="price" id="price" type="text" class="validate">
+			          <label for="price">Price</label>
+			          <div class="text text-danger" th:if="${#fields.hasErrors('price')}"
+					th:errors="*{price}"></div>
+			        </div>
+			      </div>
+			      
+			      <div class="add_formation_holder">
+				      <div class="add_button">
+						<button type="submit">
+						<h5>INSERT</h5>
+						</button>
+				      </div>
+			      </div>
+
+
+			    </div>
+			  </div>
+			
+		</form>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>Add Formation</title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>  
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>     
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<link rel="stylesheet" type="text/css" href="/css/Dashboard.css">
+	<link rel="stylesheet" type="text/css" href="/css/list_formation.css">
+	
+</head>
+<body>
+
+	<header th:insert="fragement/dash-nav"></header>
+
+	<div class="page">
+
+		<div th:insert="fragement/side-nav"></div>
+
+		<div class="content">
+		
+			<div class="add_formation">
+					<a href="/formateur/addformation" style="text-decoration: none;">
+						<div class="add_formation_button">
+							<svg class="svg-icon" viewBox="0 0 20 20">
+								<path fill="none" d="M13.388,9.624h-3.011v-3.01c0-0.208-0.168-0.377-0.376-0.377S9.624,6.405,9.624,6.613v3.01H6.613c-0.208,0-0.376,0.168-0.376,0.376s0.168,0.376,0.376,0.376h3.011v3.01c0,0.208,0.168,0.378,0.376,0.378s0.376-0.17,0.376-0.378v-3.01h3.011c0.207,0,0.377-0.168,0.377-0.376S13.595,9.624,13.388,9.624z M10,1.344c-4.781,0-8.656,3.875-8.656,8.656c0,4.781,3.875,8.656,8.656,8.656c4.781,0,8.656-3.875,8.656-8.656C18.656,5.219,14.781,1.344,10,1.344z M10,17.903c-4.365,0-7.904-3.538-7.904-7.903S5.635,2.096,10,2.096S17.903,5.635,17.903,10S14.365,17.903,10,17.903z"></path>
+							</svg>
+							<h5>Add Formation</h5>
+						</div>
+					</a>
+			</div>
+			
+		
+			<table class="table responsive-table">
+			  <thead>
+			    <tr style="text-align: center;">
+			      <th scope="col" style="text-align: center;">Formation Id</th>
+			      <th scope="col" style="text-align: center;">Formation Title</th>
+			      <th scope="col" style="text-align: center;" >Formation Plans</th>
+			      <th scope="col" style="text-align: center;">Formation Prerequis</th>
+			      <th scope="col" class="center-align" style="text-align: center;">Actions</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="formation:${formations}">
+			      <td scope="row" th:text="${formation.id}"></td>
+			      <td th:text="${formation.title}"></td>
+			      <td>
+			      	<table class="table-plan">
+			      		<tr th:each="plan:${formation.plans}" style="border-bottom:none;">
+				      		<td th:text="${plan.p_title}">
+				      			
+				      		</td>
+				      		<td style="text-align: right; display: flex; justify-content: flex-end;">
+				      			<a th:href="@{/formateur/updatePlan/(plan_id=${plan.id})}">
+				      				<i class="material-icons" style="color: #22559c;">edit</i>
+				      			</a>
+				      			<form th:action="@{/formateur/plan/}+${plan.id}" method="post">
+				      				<button type="submit">
+				      					<i class="material-icons" style="color: #cf3030;">delete</i>
+				      				</button>
+				      			</form>
+				      		</td>
+			      		</tr>
+			      		<tr style="border-bottom:none;">
+			      			<td colspan="2" style="text-align: center;">
+			      				<a th:href="@{/formateur/addplan(formation_id=${formation.id})}">
+			      					<i class="material-icons" style="color: #22559c;">add</i>
+			      				</a>
+			      			</td>
+			      		</tr>
+			      	</table>
+			      </td>
+			      
+			      <td>
+			      	<table class="table-plan">
+			      		<tr style="border-bottom:none;">
+			      			<td colspan="2" style="text-align: center;">
+			      				<a th:href="@{/formateur/prerequis(formation_id=${formation.id})}">
+			      					<i class="material-icons" style="color: #22559c;">add</i>
+			      				</a>
+			      			</td>
+			      		</tr>
+			      	</table>
+			      </td>
+			      
+			      <td class="actions">
+			      	<ul>
+		            	<li class="actions-list">
+	  						<a th:href="@{/formateur/updateformation/(formation_id=${formation.id})}"><i class="material-icons" style="color: #22559c;">edit</i></a>
+	  						<form th:action="@{/formateur/listformation/}+${formation.id}" method="post"><button type="submit"><i class="material-icons" style="color: #cf3030;">delete</i></button></form>
+	  						<a th:href="@{/formateur/consulter/(formation_id=${formation.id})}"><i class="material-icons" style="color: #07617d;">remove_red_eye</i></a>
+						</li>
+		           	</ul>
+		          </td>
+			      
+			    </tr>
+	
+	  		  </tbody>
+			</table>
+						
+		</div>
+
+
+	</div>
+
+
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+	  	$(".nav a").hover(function(){
+			  $(".nav").css("width", "300px");
+			  $(".nav").css("transition", "0.3s ease");
+
+			  }, function(){
+			  $(".nav").css("width", "80px");
+			  $(".nav").css("transition", "0.3s ease");
+
+			});
+	    $('.carousel.carousel-slider').carousel({
+	      fullWidth: true,
+	      indicators: true
+	    });
+
+	    $('.dropdown-trigger').dropdown();
+
+	    $('.sidenav').sidenav();
+	  });
+      
+	</script>
+
+</body>
+</html>

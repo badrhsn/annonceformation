@@ -1,0 +1,251 @@
+body {
+	height: 100vh;
+	background-color: #fff";
+	background-attachment: fixed;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+/* upper nav */ 
+
+.sidenav {
+	background-color: #236969;
+}
+.sidenav > a {
+	padding: 0;
+}
+
+.sidenav li > a {
+	color: #fce38a;
+}
+
+.sidenav li > a:hover {
+	background-color: #303a52 ;
+}
+
+.upper-nav {
+	z-index: 99;
+	position: fixed;
+	height: 60px;
+	background-color: #236969;
+	border-bottom: 1px solid #303a52;
+}
+
+.upper-nav .upper-nav-ul {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.dropdown2 {
+	top: 60px !important;
+	width: 130px !important;
+}
+
+.profile {
+	padding: 10px;
+}
+
+.profile:hover {
+	background-color: #303a52;
+}
+
+.avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.info {
+	display: flex;
+	margin-right: 20px;
+}
+
+.logo {
+	font-weight: 700;
+	margin-left: 20px;
+}
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.nav .svg-icon {
+  padding: 15px;
+  width: 80px;
+  height: 80px;
+}
+
+.nav .svg-icon path,
+.nav .svg-icon polygon,
+.nav .svg-icon rect {
+  fill: #fff;
+}
+
+.nav .svg-icon circle {
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+.nav h6 {
+	margin: 0 0 0 20px;
+	color: #fff;
+}
+
+.page {
+	display: flex;
+	height: 100%;
+}
+.nav {
+	z-index: 99;
+	position: fixed;
+	width: 80px;
+	height: 100%;
+	background-color: #236969;
+	overflow: hidden;
+	margin-top: 60px;
+}
+
+.nav ul {
+	width: 300px;
+}
+
+.nav ul li {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.nav ul a:hover {
+	opacity: 0.7;
+	transition: 0.3s ease;
+}
+
+.nav ul a:hover > li {
+	background-color: #fff;
+	transition: .3s ease;	
+}
+
+.nav ul a:hover > li h6{
+	color: #236969;
+	transition: .3s ease;	
+}
+
+.nav ul a:hover > li .svg-icon path, li .svg-icon polygon, li .svg-icon rect, li .svg-icon circle{
+	fill: #236969;
+	transition: .3s ease;	
+}
+
+/* Content */
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+.content .svg-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.content .svg-icon path,
+.content .svg-icon polygon,
+.content .svg-icon rect {
+  fill: #fce38a;
+}
+
+.content .svg-icon circle {
+  stroke: #fce38a;
+  stroke-width: 1;
+}
+
+.content h5 {
+	color: #fce38a;
+	margin: 0 0 0 10px;
+}
+
+
+.content {
+	padding-left: 80px;
+	padding-top: 60px;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.content .best-formation, .content .recent-formations, .content .inbox {
+	width: 80%;
+	margin: 80px auto 0 auto;
+}
+
+.content .card {
+	background-color: #e6d385;
+}
+
+.content .card h6, .content .card-panel h6 {
+	color: #303a52;
+	font-weight: 700;
+	margin: 0;
+	margin-top: 4px;
+}
+
+.content .card span, .content .card-panel span {
+	color: black;
+	font-weight: 500;
+	margin: 0;
+} 
+
+.content .all-cards {
+	display: flex;
+}
+
+.content .card-panel {
+	padding: 0 20px 20px 20px;
+	background-color: #e6d385;
+}
+
+.content .card-panel .username {
+	padding: 10px 0;
+	display: flex;
+}
+
+.content .card-panel .black-text {
+	padding-left: 36px;
+}
+
+
+.content .card-panel .username .avatar {
+	width: 25px; 
+	height: 25px;
+}
+
+@media screen and (max-width: 1000px){
+	.content {
+		padding-left: 0;
+		padding-top: 40px;
+		width: 100%;
+		height: 100%;
+		background-color: #303a52;
+	}
+
+	.content .card h6 {
+		font-size: 13px;
+	}
+}
+
+
+@media screen and (max-width: 600px){
+	
+}
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+	<img class="wave" src="/assets/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="/assets/background.svg">
+		</div>
+		<div class="login-content">
+			<form name="register" th:action="@{/completeprofile}" th:object="${user}" method="post"> 
+				<ul class="social-media"> 
+		            <a th:href="${facebook}">
+		              <li class="facebook">
+		                <i class="fab fa-facebook-f"></i>
+		                <h4 style="margin: 0 0 0 16px;">Continue with Facebook</h4>
+		              </li>
+		            </a>
+		            <a th:href="${google}">
+		              <li class="google">
+		                <i class="fab fa-google"></i>
+		                <h4 style="margin: 0 0 0 16px;">Continue with Google</h4>
+		              </li>
+		            </a>
+			</ul>
+				<div class="alert alert-info" th:if="${exist}">
+				<p class="text text-center">
+				  User with this Email already Exist
+				</p>
+				</div>
+		        
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-at"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Email</h5>
+           		   		<input name="email" type="text" class="input" required="true">
+           		   </div>
+           		  
+           		</div>
+           		 <div class="text text-danger" th:if="${#fields.hasErrors('email')}"
+					th:errors="*{email}"></div>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input name="name" type="text" class="input" required="true">
+           		   </div>
+           		   </div>
+           		   <div class="text text-danger" th:if="${#fields.hasErrors('name')}"
+					th:errors="*{name}"></div>
+           		
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>First Name</h5>
+           		   		<input name="first_name" type="text" class="input" required="true">
+           		   </div>
+           		</div>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Last Name</h5>
+           		   		<input name="last_name" type="text" class="input" required="true">
+           		   </div>
+           		</div>
+           		
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input name="password" type="password" class="input">
+            	   </div>
+            	   </div>
+            	   <div class="text text-danger" th:if="${#fields.hasErrors('password')}"
+					th:errors="*{password}"></div>
+					<div>
+					<input type="radio" id="contactChoice1"
+				     name="roles" value="FORMATEUR">
+				    <label for="contactChoice1">Teacher</label>
+				
+				    <input type="radio" id="contactChoice2"
+				     name="roles" value="USER" checked="checked">
+				    <label for="contactChoice2">Student</label>
+				    </div>
+				    <div class="alert alert-info" th:if="${roleError}">
+				<p class="text text-center">
+				  Please Choose One Teacher/Student
+				</p>
+				</div>
+            	
+            	<a href="/login">Have An Account? Log IN</a>
+            	<input type="submit" class="btn" value="Register">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/login.js"></script>
+</body>
+</html>

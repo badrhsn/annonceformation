@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/formation-detail.css" />
+
+    <title th:text="${currentformation.title}"></title>
+</head>
+
+<body>
+
+   <header th:insert="fragement/header"></header>       
+
+    <div class="page">
+
+        <div class="image-price-mobile">
+            <img class="img-mobile" src="/assets/test2.jpg" />
+        </div>
+
+        <div class="formation-info">
+            <div class="row">
+                <div class="col xl7 l7 m12 s12 infos">
+                    <h4 class="title" th:text="${currentformation.title}"> </h4>
+                    <h5 class="subtitle" th:text="${currentformation.subtitle}">
+                    </h5>
+                    <h6 class="nbr-participants">
+                        <span class="span1" th:text="${currentformation.current_student}"></span>/<span class="span2" th:text="${currentformation.limit_student}"></span> Participants inscrits
+                    </h6>
+                </div>
+
+                <div class="col xl5 l5">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mobile-infos">
+            <div class="pricing-infos">
+                <h5 th:text="${currentformation.price}+' MAD'"></h5>
+            </div>
+
+            <div class="creator-date-language">
+                <p class="creator">Crée par : <span class="creator-name" th:text="${userOfFormation.last_name}+' '+${userOfFormation.first_name}"></span></p>
+                <p class="date">Date de départ : <span class="date-depart"></span></p>
+                <p class="language">
+                	<i class="material-icons">add</i>
+                	<span th:text="'Language : '+${currentformation.language}"></span>
+                </p>
+            </div>
+
+            <div class="inscr-btn-container hoverable">
+                <a href="" class="inscr-button">
+                    <h6>Inscrire</h6>
+                </a>
+            </div>
+        </div>
+
+        <div class="image-price hide-on-med-and-down">
+            <img class="img" src="/assets/test2.jpg" />
+            <div class="pricing-infos">
+                <h2 th:text="${currentformation.price}+' MAD'"></h2>
+            </div>
+            
+            <div th:if=${subscribed} class="inscription-buttons">
+	            <a href="" class="reinscrire re1 hoverable">
+	            	<h6>
+	            		Réinscrire
+	            	</h6>
+	            </a>
+	            <a th:href="@{/cancel/{id}(id = ${currentformation.id})}" class="reinscrire re2 hoverable">
+	            	<h6>
+	            		Annuler
+	            	</h6>
+	            </a>
+		    </div>
+
+            <div th:if="${(subscribed == false) and (disable == false)}" class="inscr-btn-container">
+                <a th:href="@{/inscrire/{id}(id = ${currentformation.id})}" class="inscr-button hoverable">
+                    <h6>Inscrire</h6>
+                </a>
+            </div>
+            
+            <div th:if="${(subscribed == false) and (disable == true)}" class="inscr-btn-container ">
+                <a href="#modal1" class="inscr-button disabled-btn modal-trigger waves-effect">
+                    <i class="material-icons">lock_outline</i>
+                    <h6>Inscrire</h6>
+                </a>
+            </div>
+
+
+			 <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Oops</h4>
+                    <p>La formation que vous voulez inscrire dans et plein.. Merci de chercher une autre formation</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Quittez</a>
+                </div>
+            </div>
+            
+            
+            <div class="creator-date-language">
+                <p class="creator">
+	                <i class="material-icons">create</i>Crée par : 
+	                <span class="creator-name" th:text="${userOfFormation.last_name}+' '+${userOfFormation.first_name}"></span>
+                </p>
+                <p class="date">
+	                <i class="material-icons">date_range</i>Date de départ : 
+	                <span class="date-depart" th:text="${currentformation.date_depart}"></span>
+                </p>
+                <p class="language">
+                	<i class="material-icons">language</i>
+                	<span th:text="'Language : '+${currentformation.language}"></span>
+                </p>
+            </div>
+
+            <div class="border-div" style="border-top: 1px solid #7c203a; width: 80%; margin-top: 20px;">
+
+            </div>
+
+            <div class="send-message">
+                <a href="">
+                    <i class="material-icons">message</i>
+                    <h6>
+                        Send Message
+                    </h6>
+                </a>
+            </div>
+
+        </div>
+
+<div class="formation-elements">
+            <div class="row">
+                <div class="col xl7 l7 m12 s12" style="margin-top: 50px;">
+                    <h4 class="title">Ce que vous apprendrez</h4>
+                    <div class="elements elements-holder">
+                        <div class="to-repeat" style="margin-bottom: 5px;" th:each="plan:${currentformation.plans}">
+
+                            <div class="element-name black-text">
+
+                                <div class="element-title">
+                                    <i class="fas fa-plus-circle" style="margin-right: 10px;"></i>
+                                    <span class="black-text" th:text="${plan.p_title}"></span>
+                                </div>
+
+                               
+                            </div>
+
+                            <div class="element-desc">
+                                <i class="fas fa-tags"></i> Price :<span class="element-price">[[${plan.price}]] MAD</span><br>
+                                <i class="fas fa-clock"></i> Duration : <span class="element-duration">[[${plan.price}]] hours</span><br><br>
+                                [[${plan.description}]]
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col xl5 l5">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="prerequis">
+            <div class="row">
+                <div class="col xl7 l7 m12 s12">
+                    <h4 class="title">Prérequis</h4>
+                    <div class="prerequis-list">
+                        <ul th:each="pre:${currentformation.prerequis}">
+                            <li>
+                            	<i class="material-icons">check_circle</i>[[${pre}]]
+                            </li>
+                       
+                        </ul>                
+                    </div>
+                </div>
+
+                <div class="col xl5 l5">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="full-desc">
+            <div class="row">
+                <div class="col xl7 l7 m12 s12">
+                    <h3 class="title">
+                        Description
+                    </h3>
+                    <p class="description-text" th:text="${currentformation.description}">
+                        
+                    </p>
+                </div>
+
+                <div class="col xl5 l5">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="recomendation">
+            <div class="row">
+                <div class="col xl7 l7 m6">
+                    <h3 class="title">Recomendation</h3>
+                </div>
+
+                <div class="col xl5 l5 m6">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="margin-left col xl4 l4 m5"></div>
+    </div>
+
+
+
+    <script>
+	    $(document).ready(function () {
+	    	
+	    	$('.dropdown-trigger').dropdown();
+	        $('.sidenav').sidenav();
+	        $('.modal').modal();
+	        $(document).scroll(function () {
+	            if ($(window).scrollTop() > 50) {
+	
+	                $(".image-price").css("position", "fixed");
+	                $(".image-price").css("top", "10px");
+	
+	            } else if ($(window).scrollTop() < 50) {
+	
+	                $(".image-price").css("top", "100px");
+	
+	
+	            }
+	        });
+	        $(function () {
+	            $('.element-name').click(function () {
+	                $(this).parent().find(".element-desc").toggle();
+	                return false;
+	            });
+	        });
+	    });
+    </script>
+
+
+</body>
+
+</html>

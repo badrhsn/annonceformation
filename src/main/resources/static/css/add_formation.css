@@ -1,0 +1,111 @@
+body {
+	height: 100vh;
+	background-color: #fff;
+	background-attachment: fixed;
+}
+
+.svg-icon {
+	padding: 5px;
+  	width: 40px;
+  	height: 40px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #303a52;
+}
+
+.svg-icon circle {
+  stroke: #fce38a;
+  stroke-width: 1;
+}
+
+.upper-design {
+	position: fixed;
+	height: 200px;
+	width: 100vw;
+	background-color: #236969;;
+}
+
+.form-holder {
+	z-index: 99;
+	padding-top: 50px;
+	background-color: #fff;
+	height: 100%;
+}
+
+.form {
+	padding: 25px;
+	position: relative;
+	z-index: 99;
+	width: 85%;
+	background-color: #fbfbfb;
+	margin: auto;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form a:hover > .svg-icon {
+  background-color: #fce38a;
+}
+
+.form-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-header h4 {
+	margin:0;
+	border-bottom: 4px solid #236969;
+	color: #236969;
+}
+
+.form-body {
+	margin-top: 20px;
+}
+
+.add_formation_holder {
+	display: flex;
+	justify-content: center;
+}
+
+.add_button {
+	width: max-content;
+}
+
+.add_button a:hover > h5 {
+	background-color: #236969;
+	color: #fce38a;
+}
+
+.form-body h5 {
+	color: #236969;
+	padding: 15px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	transition: 0.4s ease;
+	border-bottom: 4px solid #236969;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+button:focus {
+	background-color: transparent;
+}
+
+
+
+button:hover > h5{
+	background-color: #236969;
+	color: #fff;
+	transition: .3s ease-in-out;
+}
+
+.modal p {
+	text-align: center;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Profile</title>
+
+	<link href="Profile_fichiers/icon.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="Profile_fichiers/materialize.css" media="screen,projection">  
+    <link type="text/css" rel="stylesheet" href="Profile_fichiers/profile_style.css">    
+
+    <script src="Profile_fichiers/jquery-2.js"></script>     
+    <script type="text/javascript" src="Profile_fichiers/materialize.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+	  <ul class="sidenav" id="mobile-demo">
+	    <li><a href="file:///C:/Users/Dell_Precision_7520/Desktop/spring%20webApp/sass.html">Sass</a></li>
+	    <li><a href="file:///C:/Users/Dell_Precision_7520/Desktop/spring%20webApp/badges.html">Components</a></li>
+	    <li><a href="file:///C:/Users/Dell_Precision_7520/Desktop/spring%20webApp/collapsible.html">Javascript</a></li>
+	    <li><a href="file:///C:/Users/Dell_Precision_7520/Desktop/spring%20webApp/mobile.html">Mobile</a></li>
+	  </ul>
+
+	  <nav>
+	    <div class="nav-wrapper grey lighten-5">
+	      <div class="container content">
+
+	        <div>
+	          <a href="#!" class="brand-logo">Logo</a>
+	          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+	        </div>
+	        
+	        <div style="display: flex; align-items: center;">
+	          <ul class="right hide-on-med-and-down">
+	            <li>
+	              <form>
+	                <div class="input-field head-search">
+	                  <input id="search" type="search" required="" placeholder="Recherche">
+	                  <label class="label-icon active" for="search"><i class="material-icons">search</i></label>
+	                  
+	                </div>
+	              </form>
+	            </li>
+	            <li><a href="file:///C:/Users/Dell_Precision_7520/Desktop/spring%20webApp/sass.html">Sass</a></li>
+	            <li><a href="file:///C:/Users/Dell_Precision_7520/Desktop/spring%20webApp/badges.html">Components</a></li>
+	            <li><a href="file:///C:/Users/Dell_Precision_7520/Desktop/spring%20webApp/collapsible.html">Javascript</a></li>
+	          </ul>
+	        </div>
+
+	        
+	    </div>
+	    </div>
+	  </nav>
+
+	<div>
+		<div class="profile_cover">
+			 <img src="Profile_fichiers/bg.jpg" class="cover_image">
+		</div>
+
+		<div class="profile_info">
+			<div class="img">
+				 <img src="Profile_fichiers/avatar.svg" alt="Avatar" class="avatar"> 
+			</div>
+
+			<div class="name-place">
+				<h5 style="font-weight: 700; margin-bottom: 0;">LKHLUF Aymane</h5>
+				<h6 style="margin: 0.1rem 0 0.46rem 0; color: #86a6df; font-weight: 500;">Tetouan, Morocco</h6>
+			</div>
+
+			<div class="bio">
+				<p>LKHLUF Aymane french fashion and advertising photographer and director.</p>
+			</div>
+
+			<ul class="social-media">
+				<a href="">
+					<li class="Facebook">
+						<img src="Profile_fichiers/fb.png" width="25" height="25">
+						<h6 style="margin: 0 0 0 16px;">Facebook</h6>
+					</li>
+				</a>
+				
+				<a href="">
+					<li>
+						<img src="Profile_fichiers/lenkin.webp" width="25" height="25">
+						<h6 style="margin: 0 0 0 16px;">Linkedin</h6>
+					</li>
+				</a>
+				
+				<a href="">
+					<li>
+						<img src="Profile_fichiers/insta.webp" width="25" height="25">
+						<h6 style="margin: 0 0 0 16px;">Instagram</h6>
+					</li>
+				</a>
+				
+			</ul>
+		</div>
+
+		<div class="dropdown-competence container">
+			
+			
+		</div>
+
+		<div class="mes_cours">
+			<div class="container">
+				<div class="title">
+					<h4>Mes Cours</h4>
+				</div>
+
+				<div class="row">
+				    <div class="col s10 m4 l4 xl4">
+				      <a href="#">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="Profile_fichiers/card_img.jpg">
+				        </div>
+				          <div class="card-action">
+				            <h6 style="color: black; font-weight: 700;">Design</h6>
+				            <p style="color: #86a6df; font-size: 11px;">LKHLUF Aymane</p>
+				            <p>4.5</p>
+				            <p>119 $US</p>
+				          </div>
+				      </div>
+				      </a>
+				  </div>
+
+				  <div class="col s10 m4 l4 xl4">
+				      <a href="#">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="Profile_fichiers/test3.jpg">
+				        </div>
+				          <div class="card-action">
+				            <p>Design</p>
+				          </div>
+				      </div>
+				      </a>
+				  </div>
+
+				  <div class="col s10 m4 l4 xl4">
+				      <a href="#">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="Profile_fichiers/test2.jpg">
+				        </div>
+				          <div class="card-action">
+				            <p>Design</p>
+				          </div>
+				      </div>
+				      </a>
+				  </div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+
+    $('.dropdown-trigger').dropdown();
+
+    $('.sidenav').sidenav();
+  });
+          
+      
+  </script>
+
+
+<div class="sidenav-overlay"></div><div class="drag-target"></div></body></html>

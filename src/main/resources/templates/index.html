@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>WebPage</title>
+	
+	<meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>  
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+        
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>     
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    
+</head>
+<body>
+
+	<header th:insert="fragement/header"></header>
+	
+
+  <div class="slider-adjustment center" >
+
+    <img src="assets/placeholder.jpg" class="head_image">
+
+    <div class="black-text" href="#one!">
+      
+        <div class="learn_more">
+          <div class="card-panel teal white-text">
+            <h2>What are you looking for ?</h2>
+              <p class="white-text">Join our Website and become one of hundred others talented formers around the globe</p>
+              <div class="nav-wrapper">
+               <form th:action="@{/search}" method="get">
+	              <div class="input-field" style="height: 45px;">
+	                <button type="submit" class="label-icon second-search">
+                   		
+                     	<i class="material-icons"> search</i>
+                        
+                   </button> 
+	                
+	                <input id="search" name="title" class="search_input" type="search" required
+	                  placeholder="Que souhaitez vous apprendre ?" style="width: 100%;">
+	                
+	
+	              </div>
+              	</form>
+              </div>
+          </div>
+        </div>
+          
+    </div>
+      <!-- <div class="carousel carousel-slider center">
+        <div class="carousel-fixed-item" sty>
+          <a class="btn waves-effect indigo darken-1 white-text darken-text-2">Get Started !</a>
+        </div>
+        <div class="carousel-item bg white-text" href="#one!">
+          <h2>Become a Former</h2>
+          <p class="white-text">Join our Website and become one of hundred others talented formers around the globe</p>
+        </div>
+        
+      </div>-->
+    </div>
+
+
+
+
+	  <div class="section-1 container" id="sec1">
+
+
+    <h5 style="padding-left: 10px;">Our Categories</h5>
+
+    <div class="categories-holder row">
+    
+      <div class="cat-title col col xl3 l4 m6 s10" th:each="category:${categories}">
+        <a  th:href="@{/categorie(type=${category.name})}" class="hoverable">
+          <i class="material-icons" style="margin-right: 10px;"><span th:text="${category.icon}"></span></i>
+          <span th:text="${category.name}"></span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="image_with_caption_section">
+    <div class="section_wrapper white-text">
+      <div class="sep_content">
+        <img src="assets/former.jpg" class="img-formateur">
+        <div class="sep_sub_content">
+          <h4>Devenir un formateur</h4>
+          <p>Les meilleurs formateurs du monde donnent des cours à des millions de participants sur Udemy. Nous vous
+            offrons les outils et les compétences nécessaires pour enseigner ce que vous aimez.</p>
+
+          <a href="" class="devenir-formateur">
+            Devenir
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer" style="margin-top: 100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Created By</h5>
+          <p class="grey-text text-lighten-4">EZZIANI Mohamed</p>
+          <p class="grey-text text-lighten-4">LKHLUF Aymane</p>
+          <p class="grey-text text-lighten-4">EL HASSOUNI Badr edine</p>
+          <p class="grey-text text-lighten-4">TAUIL Abdelilah</p>
+          
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Master</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">M2I</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">M2I</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">M2I</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">M2I</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Encadré par :
+        <a class="grey-text text-lighten-4 right" href="#!">NAANAI Adil</a>
+      </div>
+    </div>
+  </footer>
+	
+     
+
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+
+    $('.dropdown-trigger').dropdown();
+
+    $('.sidenav').sidenav();
+  });
+          
+      
+  </script>
+
+
+</body>
+</html>
